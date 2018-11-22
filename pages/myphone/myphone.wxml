@@ -1,0 +1,37 @@
+<!--pages/myphone/myphone.wxml-->
+<view class="input_section">
+  <view class="input_label">手机号码</view>
+  <view class="code_group">
+    <input placeholder="请输入手机号码" value="{{phoneValue}}" maxlength="11" placeholder-class="holder_class" bindinput="checkCode"></input>
+    <!-- <button class="get_code" open-type="getPhoneNumber" bindgetphonenumber='getPhone'>获取手机号</button> -->
+  </view>
+</view>
+<view class="input_section">
+  <view class="input_label">验证码</view>
+  <view class="code_group">
+    <input placeholder="请输入验证码" maxlength="8" placeholder-class="holder_class" type="number" value="{{code}}" bindinput="inputCode"></input>
+    <button wx:if='{{!countDown}}' class="get_code" disabled="{{!getCode}}" bindtap='getCode'>获取验证码</button>
+    <button wx:else class="get_code" disabled="true">{{waitSec}}s</button>
+  </view>
+</view>
+
+<view class="input_section">
+  <view class="input_label">姓名</view>
+  <view class="code_group">
+    <input placeholder="请输入姓名" value="{{real_name}}" maxlength="8" placeholder-class="holder_class" bindinput='inputName'></input>
+  </view>
+</view>
+
+<view class="input_section">
+  <view class="input_label">学校名称</view>
+  <view class="code_group">
+    <input placeholder="请输入学校名称" value="{{school_name}}" maxlength="11" placeholder-class="holder_class" bindinput='inputSchoolName'></input>
+  </view>
+</view>
+
+<view style='text-align:center;font-size:28rpx;margin:10rpx 0;padding:10rpx 20rpx;'>*请认真填写以上信息，否则后续无法得到单招资源以及升学特殊名额等服务。</view>
+<view style='text-align:center;font-size:28rpx;margin:10rpx 0;padding:10rpx 20rpx;'>成功购买后点击资讯上中的“关于我们”，在“关于我们”中添加微信号，即可得到助学红包60元</view>
+
+<view class="bind_btn" bindtap="confirm_binding" hover-class="hover_class">确认绑定</view>
+
+<view class="tips" hidden="{{tipsShow}}">{{inputTips}}</view>

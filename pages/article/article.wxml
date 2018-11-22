@@ -1,0 +1,28 @@
+<!--pages/article/article.wxml-->
+<view class="category-wrapper {{showFilter}}">
+  <view class="category-list" wx:for="{{filterArray}}" wx:key="{{index}}">
+      <view bindtap='chooseCate' data-catid="{{item.cat_id}}" class="category-items">{{item.cat_name}}</view>
+  </view>
+</view>
+
+<view class="filter_btn" bindtap="showFilter">
+  <image hidden="{{filterShow}}" src="../../assets/img/filter.png" mode="aspectFill"></image>
+  <image hidden="{{!filterShow}}" src="../../assets/img/close.png" mode="aspectFill"></image>
+</view>
+
+<view class="article_list">
+  <navigator url="../articledetail/articledetail?id={{item.article_id}}" class="article_item" wx:for="{{articleArray}}" wx:key="{{index}}">
+    <view class="article_box">
+      <view class="article_content">
+        <view class="article_image">
+          <image src="{{hostName}}{{item.thumb}}" mode="aspectFill"></image>
+        </view>
+        <view class="article_title">{{item.title}}</view>
+        <view class="article_caption">{{item.description}}</view>
+      </view>
+    </view>
+  </navigator>
+
+</view>
+
+

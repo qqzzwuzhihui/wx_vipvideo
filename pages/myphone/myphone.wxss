@@ -1,0 +1,47 @@
+/* pages/myphone/myphone.wxss */
+.input_section{
+  padding: 30rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #e1e1e1;
+}
+.input_section .input_label{
+  font-size: 24rpx;
+}
+.holder_class{
+  font-size: 24rpx;
+  color: #666;
+}
+.code_group{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.code_group input{
+  flex: 1;
+}
+.code_group .get_code{
+  width: 180rpx;
+  font-size: 24rpx;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+.bind_btn{
+  width: 480rpx; 
+  padding: 20rpx 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+}
+.tips{
+  font-size: 24rpx;
+  padding: 20rpx;
+  text-align: center;
+}
+.hover_class{
+  opacity: .8;
+}

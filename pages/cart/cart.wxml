@@ -1,0 +1,49 @@
+<!--pages/cart/cart.wxml-->
+<view hidden="{{!noProduct}}">
+  <view class="cart-empty">
+    <image src="../../assets/img/cart-center.png" mode="aspectFit"></image>
+    <view>购物车暂时没有商品</view>
+    <navigator open-type="switchTab" url="../index/index" class="cart-buy">立即去购买</navigator>
+  </view>
+</view>
+
+<view hidden="{{noProduct}}">
+  <view class="cart_list">
+    <view class="cart_items" wx:for="{{cartArray}}" wx:key="{{index}}">
+      <view class="cart_delete" bindtap="deleteItems" data-index="{{item.id}}"><icon type="clear" size="20" color="{{item}}"/></view>
+      <view class="cart_header">
+        <navigator open-type="navigate" url="../video/video?id={{item.goods_id}}">
+          <view class="cart_img">
+            <image src="{{hostName}}{{item.goods.original_img}}"></image>
+          </view>
+        </navigator>
+        <view class="cart_info">
+          <navigator open-type="navigate" url="../video/video?id={{item.goods_id}}">{{item.goods_name}}</navigator>
+          <view>价格：<view class="price">{{item.goods_price}}</view> 元</view>
+        </view>
+        <view class="cart_num">X {{item.goods_num}}</view>
+      </view>
+    </view>
+
+    <view wx:if="{{canBuy==1 || canBuy==3}}">
+      <view class="cart_actions_group">
+        <view class="count_btn" bindtap='confirm_counting'>立即结算</view>
+      </view>
+    </view>
+    <view wx:elif="{{canBuy==2}}">
+      <view style="font-size:24rpx;margin-top:30rpx;text-align:center;">
+       <navigator open-type='navigate' url="../myphone/myphone">填写姓名和学校名称可以优惠100元哦！</navigator>
+      </view>
+      <view class="cart_actions_group">
+        <view class="count_btn" bindtap='confirm_counting'>立即结算</view>
+      </view>
+    </view>
+
+    <view wx:else>
+      <view class="cart_actions_group">
+        <view class="count_btn">请先完善“我的”考生信息</view>
+      </view>
+    </view>
+    
+  </view>
+</view>

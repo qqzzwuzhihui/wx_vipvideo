@@ -1,0 +1,72 @@
+/* pages/usercenter/usercenter.wxss */
+.user_info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  position: relative;
+  color: #fff;
+}
+.user_info_img{
+  box-shadow: 0 1px 10px rgba(255, 255, 255, .5);
+  border-radius: 50%;
+  background-color: #fff;
+  overflow: hidden;
+  width: 190rpx;
+  height: 190rpx;
+}
+.user_info_img image{
+  width: 190rpx;
+  height: 190rpx;
+}
+.user_box{
+  position: relative;
+  z-index: 2;
+}
+.user_bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.user_bg image{
+  width: 100%;
+  height: 100%;
+}
+.user_bg::after{
+  display: block;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, .8);
+}
+.bg_white{
+  background-color: #fff;
+}
+.user_center_actions{
+  margin-top: 15px;
+  border-top: 1px solid #e1e1e1;
+}
+.user_actions_item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 30rpx;
+  border-bottom: 1px solid #e1e1e1;
+  font-size: 30rpx;
+}
+.arrow_right{
+  width: 30px;
+  height: 30px;
+  background-image: url(data:image/png;base64,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);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

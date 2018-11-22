@@ -1,0 +1,37 @@
+<!--pages/video/video.wxml-->
+<view class="video_section">
+  <view class="video-wrapper">
+    <view wx:if="{{!isUse}}" class="video-cover">
+      <view class="video_cover_info">您还没购买该视频，无法观看该视频</view>
+      <view class="video_cover_info" bindtap='addToCart'>点击此处购买</view>
+    </view>
+    <video wx:else src="{{hostName}}{{reqData.goods.video}}" controls></video>
+  </view>
+  <view class="video_title">{{reqData.goods.goods_name}}</view>
+  <view class='flex-row bg-white border-bottom'>
+    <view class='flex-title'>售价</view>
+    <view class="video_price high_line flex-item">¥ {{reqData.goods.shop_price}}</view>
+  </view>
+</view>
+
+<view class="fixed-button">
+  <button wx:if="{{!isUse}}" type='button' class='flex-btn addcart' bindtap='addToCart'>加入购物车</button>
+  <button type='button' class='flex-btn checkcart'  bindtap='toCart'>查看购物车</button>
+</view>
+
+<!-- <view class="push_info">
+  <view class="info_title">相关推荐</view>
+  <view class="article_list">
+    <navigator class="article_item" wx:for="{{articleArray}}" wx:key="{{index}}">
+      <view class="article_box">
+        <view class="article_content">
+          <view class="article_image">
+            <image src="{{item.img}}" mode="aspectFill"></image>
+          </view>
+          <view class="article_title">{{item.title}}</view>
+          <view class="article_caption">{{item.caption}}</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view> -->

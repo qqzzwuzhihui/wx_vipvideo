@@ -1,0 +1,35 @@
+<!--pages/usercenter/usercenter.wxml-->
+<view class="user_info">
+  <view class="user_box">
+    <view class="user_info_img">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view style="text-align:center"><open-data type="userNickName"></open-data></view>
+  </view>
+  <view class="user_bg"><image src="../../assets/img/user_bg.jpg" mode="scaleToFill"></image></view>
+</view>
+
+<button wx:if='{{sessionFailed}}' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+
+<view class="user_center_actions">
+  <view class="user_actions_list" wx:if="{{!sessionFailed}}">
+    <navigator open-type="navigate" url="../myphone/myphone" class="user_actions_item bg_white">
+      考生信息 
+      <view class="arrow_right"></view>
+    </navigator>
+    <navigator open-type="navigate" url="../myvideo/myvideo" class="user_actions_item bg_white">
+      我的视频
+      <view class="arrow_right"></view>
+    </navigator>
+  </view>
+  <view class="user_actions_list" wx:else>
+    <view bindtap='nologin' class="user_actions_item bg_white">
+      考生信息 
+      <view class="arrow_right"></view>
+    </view>
+    <view bindtap='nologin' class="user_actions_item bg_white">
+      我的视频
+      <view class="arrow_right"></view>
+    </view>
+  </view>
+</view>

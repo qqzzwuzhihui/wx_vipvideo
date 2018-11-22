@@ -1,0 +1,2 @@
+<!--pages/articledetail/articledetail.wxml-->
+<web-view src="{{hostName}}{{articleUrl}}{{targetId}}"></web-view>

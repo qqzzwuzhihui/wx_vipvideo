@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="main-container">
+  <swiper class="video_box" indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{sliderArray.imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{hostName}}{{item.ad_code}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="video_wrapper">
+    <navigator url="../video/video?id={{item.goods_id}}" hover-class="video-hover" class="video_box" wx:for="{{videoData}}" wx:key="{{index}}">
+      <!-- <view class="video_status" hidden="{{item.status==='0'}}"><image src="../../assets/img/check.png"></image></view> -->
+      <view class="video_img_box">
+        <view class="video_cover"></view>
+        <view class="play_icon"><image src="../../assets/img/play.png"></image></view>
+        <image src="{{hostName}}{{item.original_img}}" class="video_img" mode="aspectFill"/>
+      </view>
+      <view class="video_title">{{item.goods_name}}</view>
+    </navigator>
+  </view>
+
+  <view wx:if='{{page < totalPages}}' style='padding:60rpx 0;text-align:center;font-size:30rpx;color:#999;' bindtap='getMoreVideo'>加载更多</view>
+
+</view>
+

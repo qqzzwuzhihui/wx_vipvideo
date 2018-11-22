@@ -1,0 +1,9 @@
+<!--pages/orderstate/orderstate.wxml-->
+<view class='flex-column'>
+  <icon type="success_no_circle" size="150" color="{{item}}"/>
+  <view class='order-notice'>
+    <view>恭喜你，已经成功购买视频</view>  
+    <view>点击 <navigator open-type='switchTab' url='../usercenter/usercenter'>我的视频</navigator> 观看视频吧！</view>
+    <navigator style='display:block;margin-top:60rpx;' open-type='switchTab' url='../index/index'>返回首页</navigator>
+  </view>
+</view>

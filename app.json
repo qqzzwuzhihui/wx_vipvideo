@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/article/article",
+    "pages/usercenter/usercenter",
+    "pages/cart/cart",
+    "pages/video/video",
+    "pages/myvideo/myvideo",
+    "pages/myphone/myphone",
+    "pages/articledetail/articledetail",
+    "pages/orderstate/orderstate",
+    "pages/neworder/neworder"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "艺术生艺考",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#000",
+    "list": [
+      {
+        "iconPath": "assets/img/video_normal.png",
+        "selectedIconPath": "assets/img/video_active.png",
+        "pagePath": "pages/index/index",
+        "text": "视频"
+      },
+      {
+        "iconPath": "assets/img/info_normal.png",
+        "selectedIconPath": "assets/img/info_active.png",
+        "pagePath": "pages/article/article",
+        "text": "资讯"
+      },
+      {
+        "iconPath": "assets/img/cart_normal.png",
+        "selectedIconPath": "assets/img/cart_active.png",
+        "pagePath": "pages/cart/cart",
+        "text": "购物"
+      },
+      {
+        "iconPath": "assets/img/my_normal.png",
+        "selectedIconPath": "assets/img/my_active.png",
+        "pagePath": "pages/usercenter/usercenter",
+        "text": "我的"
+      }
+    ]
+  }
+}
